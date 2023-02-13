@@ -41,23 +41,7 @@ body {
 
 }
 
-/* footer {
-
-    background-color: blueviolet;
-    margin: 0;
+.cardContainer img {
+    /* width: 280px; */
+    height: 174px;
 }
-
-
-.test {
-    display: flex;
-    flex-direction: column;
-
-    width: 30rem;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-}
-
-#contactfooter {
-    background-color: blueviolet;
-} */

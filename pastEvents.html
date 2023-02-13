@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Amazing Events</title>
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon-AmazingEvents.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
@@ -15,232 +16,231 @@
 </head>
 
 <body>
-    <!-- <div class="container-fluid"> -->
-    <!-- <header> -->
 
 
-    <nav class="  navbar  navbar-expand-md navbar-dark bg-dark">
-        <span class="navbar-brand mb-0 ">
-            <img class="d-lg-inline-block align-top" src="./assets/img/Logo Amazing Events.png"
-                alt="Amazing Events Logo" width="60" height="30">
-        </span>
-        <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler"
-            aria-controls="navbarBar" aria-expanded="false" aria-label="toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-xl-flex justify-content-end" id="navbarNav">
-            <ul class="navbar-nav ">
+    <div class="mainContainer">
+        <nav class="  navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+            <div class="container d-flex flex-row justify-content-around justify-content-xxl-around">
+                <span class="navbar-brand mb-0 ">
+                    <img class="d-lg-inline-block align-top" src="./assets/img/Logo Amazing Events.png"
+                        alt="Amazing Events Logo" width="60" height="30">
+                </span>
+                <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler"
+                    aria-controls="navbarBar" aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-xl-flex justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav ">
 
-                <li class="nav-item ">
-                    <a href="index.html" class="nav-link ">
-                        Home
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="upcomingEvents.html" class="nav-link ">
-                        Upcoming Events
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="pastEvents.html" class="nav-link active">
-                        Past Events
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a href="contact.html" class="nav-link ">
-                        Contact Us
+                        <li class="nav-item ">
+                            <a href="index.html" class="nav-link ">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="upcomingEvents.html" class="nav-link">
+                                Upcoming Events
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="#" class="nav-link active">
+                                Past Events
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="contact.html" class="nav-link ">
+                                Contact Us
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a href="stats.html" class="nav-link">
+                                Stats
+                            </a>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </nav>
+        <h1 id="title" class="text-center bg-dark-subtle">Past Events</h1>
+        <form class="d-flex justify-content-center align-items-center" role="search">
+
+            <!-- </header> -->
+            <div class="col-auto">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="category1" value="category1">
+
+                    <label class="form-check-label" for="category1">category1</label>
+                </div>
+            </div>
+
+            <div class="col-auto">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="category2" value="category2">
+                    <label class="form-check-label" for="category2">category2</label>
+                </div>
+            </div>
+
+            <div class="col-auto">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="category3" value="category3">
+                    <label class="form-check-label" for="category3">category3</label>
+                </div>
+            </div>
+
+            <div class="col-auto">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="category4" value="category4">
+                    <label class="form-check-label" for="category4">category4</label>
+                </div>
+            </div>
+
+            <div class="col-auto">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="category5" value="category5">
+                    <label class="form-check-label" for="category5">category5</label>
+                </div>
+
+            </div>
+
+
+            <div class="col-auto">
+
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-danger ms-2" type="submit">Search</button>
+            </div>
+        </form>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 cardContainer">
+
+            <div class="col">
+                <div class="card w-75">
+                    <img src=" ./assets/img/Cinema.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">This is a longer card with supporting text below.</p>
+                        <span>price$3434</span>
+                        <a href="details.html" class="btn btn-primary">Go details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card w-75">
+                    <img src="./assets/img/Cinema.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">This is a longer card with supporting text below.</p>
+                        <span>price$3434</span>
+                        <a href="details.html" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card w-75">
+                    <img src="./assets/img/Food_Fair.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">This is a longer card with supporting text below.</p>
+                        <span>price$3434</span>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card w-75">
+                    <img src="./assets/img/Marathon.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">This is a longer card with supporting text below.</p>
+                        <span>price$3434</span>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card w-75">
+                    <img src="./assets/img/Museum_Tour.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">This is a longer card with supporting text below.</p>
+                        <span>price$3434</span>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card w-75">
+                    <img src="./assets/img/Music_Concert.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">This is a longer card with supporting text below.</p>
+                        <span>price$3434</span>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer
+            class="d-flex flex-wrap justify-content-around align-items-center py-3 my-0 border-top   bg-dark pieContact">
+
+
+            <ul class="nav col-md-4 justify-content-start list-unstyled d-flex">
+
+                <li class="ms-3">
+                    <a class="text-muted" href="">
+                        <i class="bi bi-whatsapp  text-white"> </i>
+
                     </a>
                 </li>
 
-                <li class="nav-item ">
-                    <a href="stats.html" class="nav-link">
-                        Stats
+                <li class="ms-3">
+                    <a class="text-muted" href="">
+
+                        <i class="bi bi-facebook  text-white"> </i>
                     </a>
                 </li>
+
+                <li class="ms-3">
+                    <a class="text-muted" href="">
+                        <i class="bi bi-instagram  text-white"> </i>
+
+                    </a>
+                </li>
+
+
             </ul>
-        </div>
+
+            <h2 class="text-white">Cohort</h2>
+        </footer>
         <!-- </div> -->
-    </nav>
-    <h1 id="title" class="text-center bg-body-secondary">Past Events</h1>
-    <form class="d-flex justify-content-center align-items-center" role="search">
-
-        <!-- </header> -->
-        <div class="col-auto">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="category1" value="category1">
-
-                <label class="form-check-label" for="category1">category1</label>
-            </div>
-        </div>
-
-        <div class="col-auto">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="category2" value="category2">
-                <label class="form-check-label" for="category2">category2</label>
-            </div>
-        </div>
-
-        <div class="col-auto">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="category3" value="category3">
-                <label class="form-check-label" for="category3">category3</label>
-            </div>
-        </div>
-
-        <div class="col-auto">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="category4" value="category4">
-                <label class="form-check-label" for="category4">category4</label>
-            </div>
-        </div>
-
-        <div class="col-auto">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="category5" value="category5">
-                <label class="form-check-label" for="category5">category5</label>
-            </div>
-
-        </div>
-
-
-        <div class="col-auto">
-
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        </div>
-        <div class="col-auto">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </div>
-    </form>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-
-        <div class="col">
-            <div class="card w-75">
-                <img src=" ./assets/img/Cinema.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                </div>
-                <div class="card-footer">
-                    <p class="card-text">This is a longer card with supporting text below.</p>
-                    <span>price$3434</span>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card w-75">
-                <img src="./assets/img/Costume_Party.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-
-
-                </div>
-                <div class="card-footer">
-                    <p class="card-text">This is a longer card with supporting text below.</p>
-                    <span>price$3434</span>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card w-75">
-                <img src="./assets/img/Food_Fair.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-
-
-                </div>
-                <div class="card-footer">
-                    <p class="card-text">This is a longer card with supporting text below.</p>
-                    <span>price$3434</span>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card w-75">
-                <img src="./assets/img/Marathon.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-
-
-                </div>
-                <div class="card-footer">
-                    <p class="card-text">This is a longer card with supporting text below.</p>
-                    <span>price$3434</span>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card w-75">
-                <img src="./assets/img/Museum_Tour.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-
-
-                </div>
-                <div class="card-footer">
-                    <p class="card-text">This is a longer card with supporting text below.</p>
-                    <span>price$3434</span>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card w-75">
-                <img src="./assets/img/Music_Concert.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-
-
-                </div>
-                <div class="card-footer">
-                    <p class="card-text">This is a longer card with supporting text below.</p>
-                    <span>price$3434</span>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
     </div>
-
-    <!-- <div class="container-fluid"> -->
-    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top   bg-dark">
-
-
-        <ul class="nav col-md-4 justify-content-start list-unstyled d-flex">
-
-            <li class="ms-3">
-                <a class="text-muted" href="">
-                    <i class="bi bi-whatsapp  text-white"> </i>
-
-                </a>
-            </li>
-
-            <li class="ms-3">
-                <a class="text-muted" href="">
-
-                    <i class="bi bi-facebook  text-white"> </i>
-                </a>
-            </li>
-
-            <li class="ms-3">
-                <a class="text-muted" href="">
-                    <i class="bi bi-instagram  text-white"> </i>
-
-                </a>
-            </li>
-
-
-        </ul>
-
-        <h2 class="text-white">Cohort</h2>
-    </footer>
-    <!-- </div> -->
-    <!-- </div> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
