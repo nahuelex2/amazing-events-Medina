@@ -23,10 +23,15 @@ body {
 }
 
 .contactForm {
-    background-color: rgba(238, 7, 76, 0.705);
-
+    /* background-color: rgba(238, 7, 76, 0.705);
+    background-color: #d90368; */
+    background-color: #d90367e0;
     border-radius: 35px;
     padding: 30px;
+    background: rgb(255, 0, 120);
+    background: radial-gradient(circle, rgba(255, 0, 120, 1) 0%, rgba(232, 0, 108, 0.6922969016708246) 100%);
+
+
 }
 
 .detailsCard {
@@ -44,4 +49,9 @@ body {
 .cardContainer img {
     /* width: 280px; */
     height: 174px;
+}
+
+#title {
+    color: rgb(29, 33, 94);
+    background: radial-gradient(circle, rgba(252, 97, 170, 1) 36%, rgba(255, 50, 145, 1) 100%);
 }
