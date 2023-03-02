@@ -450,8 +450,3 @@ export const eventsData = {
 };
 
 
-export function SortDate(a, b) {
-    var c = new Date(a.date);
-    var d = new Date(b.date);
-    return c < d;
-}
