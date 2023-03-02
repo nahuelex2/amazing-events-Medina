@@ -87,10 +87,6 @@ export function clickChkAll(checkbox, array) {
 
 export function categoryFilter(cardContainer, chkContainer, arrayEvents) {
 
-
-
-
-
     chkContainer.addEventListener('change', () => {
 
         let chkAll = chkContainer.querySelector('#All')
@@ -105,11 +101,33 @@ export function categoryFilter(cardContainer, chkContainer, arrayEvents) {
 
         let filteredEvents = arrayEvents.filter(event => categories.includes(event.category))
 
+        // let searchTESt = filteredEvents.filter()
 
         cardContainer.innerHTML = filteredEvents.length === 0 ? createCards(arrayEvents) : createCards(filteredEvents)
 
+        SearchFilter()
 
     })
 
 }
+export function SearchFilter() {
 
+    const searchVAlue = search.value.toLowerCase().trim()
+    let cards = document.querySelectorAll('.eventCard')
+    cards.forEach((card) => {
+        card.style.display = card.innerText.toLocaleLowerCase().includes(searchVAlue) ? 'block' : 'none'
+    })
+}
+export function SearchFilter2() {
+    let search = document.querySelector('#search');
+    search.addEventListener('keyup', (e) => {
+
+        const searchVAlue = search.value.toLowerCase().trim()
+        let cards = document.querySelectorAll('.eventCard')
+
+        cards.forEach((card) => {
+            card.style.display = card.innerText.toLocaleLowerCase().includes(searchVAlue) ? 'block' : 'none'
+        })
+
+    })
+}
