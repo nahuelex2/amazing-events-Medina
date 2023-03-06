@@ -8,7 +8,7 @@ function SortDate(a, b) {
 
 export function createCards(eventsArray) {
     let card = '';
-    let counter = 1;
+    let dir = location.pathname;
     eventsArray.sort((a, b) => SortDate(a, b));
     eventsArray.forEach(event => {
 
@@ -19,19 +19,16 @@ export function createCards(eventsArray) {
             <div class="card-body">
                 <h5 class="card-title">${event.name}</h5>
                 <p class="card-text">${event.description}</p>
-                <p>category: ${event.category}</p>
             </div>
             <div class="card-footer">
-            <p class="card-text">fecha: ${event.date}</p> 
-              <p class="card-text">tarjeta numero: ${counter}</p>
                 <span>price $ ${event.price}</span>
-                <a href="details.html" class="btn btn-primary" id="#${event._id}">${event._id} Go details</a>
+                <a href="details.html?id=${event._id}&ref=${dir}" class="btn btn-primary" > Go details</a>
             </div>
         </div>
         </div>
         `;
 
-        counter++;
+
     });
     return card;
 }
@@ -54,12 +51,12 @@ export function CreateCheckBoxes(events) {
 
     checkboxes = `
     <div class="col-auto">
-         <div class="form-check form-check-inline cambio">
+        <div class="form-check form-check-inline cambio">
             <input class="form-check-input chkCategory" type="checkbox" id='All' value="All">
 
                 <label class="form-check-label" for="All">All</label>
         </div>
-     </div>
+    </div>
     `
     categories.forEach(category =>
 
@@ -100,8 +97,18 @@ export function categoryFilter(cardContainer, chkContainer, arrayEvents) {
             .map(checkedChk => checkedChk.value);
 
         let filteredEvents = arrayEvents.filter(event => categories.includes(event.category))
+        const searchVAlue = search.value.toLowerCase().trim()
 
-        // let searchTESt = filteredEvents.filter()
+        let filteredEvents2 = filteredEvents.filter(event => event.name.toLowerCase().includes(searchVAlue) || event.description.toLowerCase().includes(searchVAlue))
+
+        // let filteredEvents3 = filteredEvents.filter(event => {
+
+        //     // return Object.values(event).toString().toLowerCase().includes(searchVAlue)
+        //     return Object.values(event).toString().toLowerCase().includes(searchVAlue)
+        //     // return searchVAlue.includes(Object.values(event).toString().toLowerCase())
+
+        // })
+        // console.log(filteredEvents3);
 
         cardContainer.innerHTML = filteredEvents.length === 0 ? createCards(arrayEvents) : createCards(filteredEvents)
 

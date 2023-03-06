@@ -23,3 +23,7 @@ txtSearch.addEventListener('keyup', () => {
     SearchFilter()
 })
 
+cardContainer.addEventListener('click', (e) => {
+    console.log(e.target);
+})
+
