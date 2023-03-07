@@ -17,12 +17,12 @@ export function createCards(eventsArray) {
         <div class="card w-75">
             <img src=" ${event.image}" alt="${event.name} IMAGE">
             <div class="card-body">
-                <h5 class="card-title">${event.name}</h5>
+                <h5 class="card-title"><b>${event.name}</b></h5>
                 <p class="card-text">${event.description}</p>
-                <p class="card-text">${event.category}</p>
+                <p class="card-text"><b>Date: </b>${event.date}</p>
             </div>
-            <div class="card-footer">
-                <span>price $ ${event.price}</span>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+                <span><b>Price:</b> $${event.price}</span>
                 <a href="details.html?id=${event._id}&ref=${dir}" class="btn btn-primary" > Go details</a>
             </div>
         </div>
