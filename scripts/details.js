@@ -9,8 +9,6 @@ const id = params.get("id")
 const path = params.get('ref')
 let event = events.find((event) => event._id == id)
 
-console.log(path);
-
 
 let detailsCard = /*html*/ `
   <div class="card container detailsCard">
