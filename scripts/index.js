@@ -1,13 +1,13 @@
 import { eventsData } from './data.js';
-import { createCards, CreateCheckBoxes, clickChkAll, categoryFilter, SearchFilter } from './utilities.js'
-let allEvents = eventsData.events;
+import { createCards, CreateCheckBoxes, clickChkAll, FilterByCategoryAndSearchValue } from './utilities.js'
+let events = eventsData.events;
 
 let cardContainer = document.querySelector('.cardContainer');
 
 let divCheckboxes = document.querySelector('.divCheckboxes');
 
-cardContainer.innerHTML = createCards(allEvents)
-divCheckboxes.innerHTML += CreateCheckBoxes(allEvents);
+cardContainer.innerHTML = createCards(events)
+divCheckboxes.innerHTML += CreateCheckBoxes(events);
 
 let checkboxesList = document.querySelectorAll('.chkCategory')
 
@@ -17,13 +17,15 @@ let txtSearch = document.querySelector('#search');
 clickChkAll(chkAll, checkboxesList)
 
 
-categoryFilter(cardContainer, divCheckboxes, allEvents)
+
+
+divCheckboxes.addEventListener('change', () => {
+    FilterByCategoryAndSearchValue(divCheckboxes, txtSearch, events, cardContainer)
+
+})
 
 txtSearch.addEventListener('keyup', () => {
-    SearchFilter()
+    FilterByCategoryAndSearchValue(divCheckboxes, txtSearch, events, cardContainer)
 })
 
-cardContainer.addEventListener('click', (e) => {
-    console.log(e.target);
-})
 

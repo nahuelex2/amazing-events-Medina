@@ -13,12 +13,13 @@ export function createCards(eventsArray) {
     eventsArray.forEach(event => {
 
         card += `
-        <div class="col eventCard" category = '${event.category}'>
+        <div class="col eventCard d-flex justify-content-center" category = '${event.category}'>
         <div class="card w-75">
             <img src=" ${event.image}" alt="${event.name} IMAGE">
             <div class="card-body">
                 <h5 class="card-title">${event.name}</h5>
                 <p class="card-text">${event.description}</p>
+                <p class="card-text">${event.category}</p>
             </div>
             <div class="card-footer">
                 <span>price $ ${event.price}</span>
@@ -52,7 +53,7 @@ export function CreateCheckBoxes(events) {
     checkboxes = `
     <div class="col-auto">
         <div class="form-check form-check-inline cambio">
-            <input class="form-check-input chkCategory" type="checkbox" id='All' value="All">
+            <input class="form-check-input " type="checkbox" id='All' value="All">
 
                 <label class="form-check-label" for="All">All</label>
         </div>
@@ -81,60 +82,26 @@ export function clickChkAll(checkbox, array) {
 }
 
 
+export function FilterByCategoryAndSearchValue(chksContainer, txtSearch, eventsArray, cardsContainer) {
 
-export function categoryFilter(cardContainer, chkContainer, arrayEvents) {
-
-    chkContainer.addEventListener('change', () => {
-
-        let chkAll = chkContainer.querySelector('#All')
-
-        let isSomeChkCategoryUnchecked = Array.from(chkContainer.querySelectorAll('.chkCategory')).some(chk => chk.checked === false)
-
-        chkAll.checked = !isSomeChkCategoryUnchecked;
+    let categories = Array.from(chksContainer.querySelectorAll('.chkCategory:checked'))
+        .map(checkedChk => checkedChk.value);
 
 
-        let categories = Array.from(chkContainer.querySelectorAll('.chkCategory:checked'))
-            .map(checkedChk => checkedChk.value);
+    const searchVAlue = txtSearch.value.toLowerCase().trim()
 
-        let filteredEvents = arrayEvents.filter(event => categories.includes(event.category))
-        const searchVAlue = search.value.toLowerCase().trim()
 
-        let filteredEvents2 = filteredEvents.filter(event => event.name.toLowerCase().includes(searchVAlue) || event.description.toLowerCase().includes(searchVAlue))
+    let filteredEvents = categories.length === 0 ? eventsArray.filter(event => event.name.toLowerCase().trim().includes(searchVAlue)) : eventsArray.filter(event =>
+        categories.includes(event.category) && event.name.toLowerCase().trim().includes(searchVAlue))
 
-        // let filteredEvents3 = filteredEvents.filter(event => {
 
-        //     // return Object.values(event).toString().toLowerCase().includes(searchVAlue)
-        //     return Object.values(event).toString().toLowerCase().includes(searchVAlue)
-        //     // return searchVAlue.includes(Object.values(event).toString().toLowerCase())
+    let noResults = `
+    <div class = "notFound  ">
+        <h1 ">No results were found for your search (${searchVAlue}).</h1>
+    </div>
+    `
 
-        // })
-        // console.log(filteredEvents3);
 
-        cardContainer.innerHTML = filteredEvents.length === 0 ? createCards(arrayEvents) : createCards(filteredEvents)
-
-        SearchFilter()
-
-    })
-
+    cardsContainer.innerHTML = filteredEvents.length > 0 ? createCards(filteredEvents) : noResults
 }
-export function SearchFilter() {
 
-    const searchVAlue = search.value.toLowerCase().trim()
-    let cards = document.querySelectorAll('.eventCard')
-    cards.forEach((card) => {
-        card.style.display = card.innerText.toLocaleLowerCase().includes(searchVAlue) ? 'block' : 'none'
-    })
-}
-export function SearchFilter2() {
-    let search = document.querySelector('#search');
-    search.addEventListener('keyup', (e) => {
-
-        const searchVAlue = search.value.toLowerCase().trim()
-        let cards = document.querySelectorAll('.eventCard')
-
-        cards.forEach((card) => {
-            card.style.display = card.innerText.toLocaleLowerCase().includes(searchVAlue) ? 'block' : 'none'
-        })
-
-    })
-}

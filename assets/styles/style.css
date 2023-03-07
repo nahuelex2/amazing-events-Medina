@@ -7,20 +7,19 @@
 
 body {
     background-color: rgb(177, 170, 184);
-}
-
-.mainContainer {
-
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    /* margin: 0px; */
     justify-content: space-between;
-    gap: 20px;
-    margin: 0px;
-    padding: 0px;
-
+    height: 100vh;
 }
+
+
+
+
+
+
+
+
 
 .contactForm {
     /* background-color: rgba(238, 7, 76, 0.705);
@@ -51,7 +50,22 @@ body {
     height: 174px;
 }
 
+.cardContainer {
+    /* height: 100vh; */
+
+}
+
+
+
 #title {
     color: rgb(29, 33, 94);
     background: radial-gradient(circle, rgba(252, 97, 170, 1) 36%, rgba(255, 50, 145, 1) 100%);
+}
+
+.notFound {
+    /* width: 50%; */
+    /* height: 100%; */
+    /* display: flex;
+    justify-content: center; */
+
 }
