@@ -1,7 +1,8 @@
 import { eventsData } from './data.js';
-import { createCards, CreateCheckBoxes, clickChkAll, FilterByCategoryAndSearchValue } from './utilities.js'
+import { getData, createCards, CreateCheckBoxes, clickChkAll, FilterByCategoryAndSearchValue } from './utilities.js'
 
-let events = eventsData.events.filter(event => event.date >= eventsData.currentDate);
+let data = await getData()
+let events = data.events.filter(event => event.date >= data.currentDate);
 
 let cardContainer = document.querySelector('.cardContainer');
 

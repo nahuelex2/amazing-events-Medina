@@ -1,7 +1,9 @@
 import { eventsData } from './data.js';
-import { createCards, CreateCheckBoxes, clickChkAll, FilterByCategoryAndSearchValue } from './utilities.js'
+import { getData, createCards, CreateCheckBoxes, clickChkAll, FilterByCategoryAndSearchValue } from './utilities.js'
 
-let events = eventsData.events;
+
+let events = (await getData()).events
+
 
 let cardContainer = document.querySelector('.cardContainer');
 

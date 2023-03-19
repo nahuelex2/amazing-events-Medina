@@ -5,6 +5,17 @@ function SortDate(a, b) {
     return c < d;
 }
 
+export async function getData() {
+    let urlAPI2 = "https://mindhub-xj03.onrender.com/api/amazing"
+
+    try {
+        const response = await fetch(urlAPI2)
+        const datos = await response.json()
+        return datos
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 export function createCards(eventsArray) {
     let card = '';
