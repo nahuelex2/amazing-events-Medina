@@ -1,6 +1,8 @@
-import { eventsData } from './data.js'
+import { getData } from './utilities.js'
 
-const events = eventsData.events
+
+let events = (await getData()).events
+
 const queryString = location.search
 
 const params = new URLSearchParams(queryString)
@@ -8,7 +10,7 @@ const params = new URLSearchParams(queryString)
 const id = params.get("id")
 const path = params.get('ref')
 let event = events.find((event) => event._id == id)
-
+console.log(event);
 
 let detailsCard = /*html*/ `
   <div class="card container detailsCard">
@@ -23,6 +25,7 @@ let detailsCard = /*html*/ `
         <p class="card-text"><b>Place: </b>${event.place}</p>
         <p class="card-text"><b>Price: </b>$${event.price}</p>
         <p class="card-text"><b>Capacity: </b>${event.capacity}</p>
+        <p class="card-text"><b>Estimate: </b>${event.estimate ?? '---'}</p>
         <p class="card-text"><b>Assistance: </b>${event.assistance ?? '---'}</p>
       </div>
       

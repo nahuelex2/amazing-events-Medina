@@ -45,7 +45,7 @@ export function createCards(eventsArray) {
     return card;
 }
 
-function GetCategories(events) {
+export function GetCategories(events) {
     let categories = []
     events.forEach(event => {
         if (!categories.includes(event.category))
